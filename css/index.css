@@ -162,13 +162,12 @@ header nav {
   flex-flow: row nowrap;
   max-width: 100%;
   vertical-align: top;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
 }
 
 header nav a {
-  margin-right: 65px;
   font-size: 14px;
   color: gray;
   text-decoration: none;
@@ -325,11 +324,15 @@ border-radius: 3px;
 .main-content .top-content {
   padding: 0 10px;
   display: flex;
+  width: 100%;
+  background: none;
 }
 
 .main-content .top-content .text-content {
   width: 410px;
   margin-right: 34px;
+  text-align: left;
+  background-color: white;
 }
 
 .main-content .top-content .text-content:last-child {
@@ -344,11 +347,15 @@ border-radius: 3px;
   margin-top: 37px;
   padding: 0 10px;
   display: flex;
+  width: 100%;
+  background-color: white;
 }
 
 .main-content .bottom-content .text-content {
   width: 275px;
   margin-right: 12px;
+  text-align: left;
+  background-color: white;
 }
 
 .main-content .bottom-content .text-content:last-child {
@@ -356,8 +363,6 @@ border-radius: 3px;
 }
 
 .contact {
-  margin-top: 57px;
-  border-top: 1px solid black;
   padding: 39px 10px 0;
 }
 
@@ -369,4 +374,61 @@ footer {
   margin: 32px 0;
   text-align: center;
   font-size: 14px;
+}
+
+
+/*******MEDIA QUIERY*******/
+
+@media screen and (max-width: 800px)    {
+    header nav {
+        flex-wrap: wrap;
+    }
+
+    nav .logo   {
+        width: 100%;
+        order: -1;
+        text-align: center;
+    }
+
+    nav .logo img     {
+        padding: 20px;
+    }
+    
+    .cta    {
+        justify-content: center;
+    }
+
+    .cta img   {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px)    {
+    header nav  {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav a    {
+        padding: 10px 0;
+        border-bottom: 1px solid black;
+        width: 100%;
+    }
+
+    .top-content    {
+        flex-direction: column;
+    }
+
+    .main-content .top-content .text-content   {
+        width: 100%;
+
+    }
+
+    .bottom-content {
+        flex-direction: column;
+    }
+
+    .main-content .bottom-content .text-content     {
+        width: 100%;
+    }
 }
